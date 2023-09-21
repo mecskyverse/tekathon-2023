@@ -41,3 +41,8 @@ body {
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.20) -25.07%, rgba(255, 255, 255, 0.00) 51.22%, rgba(255, 255, 255, 0.20) 111.34%);
   backdrop-filter: blur(146.5px);
 }
+
+.nav__items:hover {
+  border-radius: 16.337px;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.21) -254.09%, rgba(255, 255, 255, 0.00) 99.84%);
+}
