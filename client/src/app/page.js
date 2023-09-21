@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image'
 import {useState, useEffect} from 'react'
-// import React, {useState} from 'react'
+import SideNav from '@/components/SideNav';
 import DashboardHeader from '@/components/DashboardHeader'
 import QuizSection from '@/components/QuizSection'
 export default function Home() {
@@ -40,8 +40,8 @@ export default function Home() {
   }
   return (
     <main className="flex flex-row h-screen w-screen bg-[#000A1F] home-screen items-center">
-      <div className='w-[20vw] h-full border rounded-lg'>
-
+      <div className='w-[20vw] h-full rounded-lg '>
+        <SideNav/>
       </div>
       <div className='flex flex-col items-center h-full w-[80vw]'>
 
