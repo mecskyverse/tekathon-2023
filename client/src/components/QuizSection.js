@@ -117,7 +117,6 @@ function QuizSection({startQuiz, endQuiz}) {
             </div>) : 
             (
             <>
-            <p className='text-2xl font-bold'>Level -  Easy</p>
             <div className='text-xl mt-5'>{qArr[question].question}</div>
             <div className='flex flex-row gap-8 mt-20'>
             {
