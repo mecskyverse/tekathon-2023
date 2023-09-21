@@ -7,13 +7,13 @@ import { BiUserCircle } from 'react-icons/bi'
 import {MdPassword} from 'react-icons/md'
 function page() {
 
-    const [userName, setUserName] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isUserIconVisible, setIsUserIconVisible] = useState(true);
     const [isPwdIconVisible, setIsPwdIconVisible] = useState(true);
     
     const handleEmailChange = (e) => {
-        setUserName(e.target.value);
+        setEmail(e.target.value);
         setIsUserIconVisible(e.target.value === '');
     };
     const handlePasswordChange = (e) =>{
@@ -23,17 +23,14 @@ function page() {
 
 
     const handleSubmit = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
     
-        // // You can add your authentication logic here
-        // // Typically, you would make an API request to your server to verify the credentials
+        console.log('Email:', email);
+        console.log('Password:', password);
     
-        // console.log('Email:', email);
-        // console.log('Password:', password);
-    
-        // // Reset the form fields
-        // setEmail('');
-        // setPassword('');
+        // Resetting the form fields
+        setEmail('');
+        setPassword('');
       };
     return (
         <>
@@ -57,7 +54,7 @@ function page() {
                     <form onSubmit={handleSubmit}>
                             <input
                                 type="email"
-                                value={userName}
+                                value={email}
                                 onChange={handleEmailChange}
                                 placeholder="Email"
                                 className='w-80 placeholder:pl-5 h-14 bg-transparent border border-gray-500 focus:border-blue-500 outline-none px-4 py-2 rounded-2xl text-white p-5'
