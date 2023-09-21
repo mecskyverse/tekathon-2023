@@ -25,7 +25,7 @@ AICTE is enhancing engineering students' skills through online assessments, focu
 - Node,
 - Express 
 - MySql
-- T5 Transformer Model for MCQ Generation
+- Markov or Rasch Model for MCQ Generation
 
 
 ## Installation
