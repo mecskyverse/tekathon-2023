@@ -7,6 +7,11 @@ body {
   background-color: #1F2025;
 }
 
+.home-screen {
+  background-image: url(../../public/Grid.png);
+  background-size: 100% 100%;
+}
+
 .bg-sign {
   background-image: url(../../public/background.png);
   background-size: cover;
@@ -29,4 +34,10 @@ body {
   text-align: center;
   color: var(--light-100, #FFF);
   font-family: 'Urbanist', sans-serif;
+}
+
+.header__timer {
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.20) -25.07%, rgba(255, 255, 255, 0.00) 51.22%, rgba(255, 255, 255, 0.20) 111.34%);
+  backdrop-filter: blur(146.5px);
 }
