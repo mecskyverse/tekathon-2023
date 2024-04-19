@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-
+import SideNav from '@/components/SideNav'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -11,7 +11,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} flex home-screen h-screen w-screen bg-[#000A1F]`}>
+      <SideNav/>
+        {children}
+        </body>
     </html>
   )
 }

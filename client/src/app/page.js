@@ -39,12 +39,8 @@ export default function Home() {
     restart();
   }
   return (
-    <main className="flex flex-row h-screen w-screen bg-[#000A1F] home-screen items-center">
-      <div className='w-[20vw] h-full rounded-lg '>
-        <SideNav/>
-      </div>
-      <div className='flex flex-col items-center h-full w-[80vw]'>
-
+    <main className="flex flex-row  items-center w-full ">
+      <div className='flex flex-col items-center h-full w-full '>
       <span className='mt-20'><DashboardHeader minutes={minutes} seconds={seconds} /></span>
       <span className='mt-10'><QuizSection startQuiz={startQuiz} endQuiz={endQuiz}/></span>
       </div>
