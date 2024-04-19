@@ -1,8 +1,9 @@
+'use client'
 import React from 'react'
 import { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill} from 'react-icons/bs'
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
 
-function Home() {
+function StudentDashboard() {
 
     const data = [
         {
@@ -52,11 +53,11 @@ function Home() {
 
   return (
     <main className='main-container'>
-        <div className='main-title'>
-            <h3>STUDENT PERFORMANCE</h3>
+        <div className='main-title '>
+            <h3 className='text-3xl w-full text-center  mb-4'>STUDENT PERFORMANCE</h3>
         </div>
 
-        <div className='main-cards'>
+        <div className='main-cards px-10'>
             <div className='card'>
                 <div className='card-inner'>
                     <h3>SCORE</h3>
@@ -129,7 +130,7 @@ function Home() {
     </main>
   )
 }
-export default Home
+export default StudentDashboard
 
 
 // CSS Styling of StudentDashboard
