@@ -34,14 +34,14 @@ function page() {
       };
     return (
         <>
-            <Head>
+            {/* <Head>
                 <title>Sign In</title>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
                 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300&family=Roboto:wght@300&family=Urbanist:wght@100;200&display=swap" rel="stylesheet" />
-            </Head>
-            <main className='h-screen bg-sign'>
-                <section className='bg-gradient h-screen w-screen flex flex-col justify-center align-center'>
+            </Head> */}
+            <section className='h-screen bg-sign w-full' suppressHydrationWarning>
+                <section className='bg-gradient h-screen flex flex-col justify-center align-center ' suppressHydrationWarning>
                         <Image
                             src={parakhLogo}
                             alt="parakh Logo"
@@ -50,8 +50,8 @@ function page() {
                         />
                    
                         <h1 className='headline center text-[46px] font-[700] not-italic mt-10'>Parakh: Sign In</h1>
-                    <div className='flex flex-col self-center mt-5' suppressHydrationWarning>
-                    <form onSubmit={handleSubmit}>
+                    <section className='flex flex-col self-center mt-5' suppressHydrationWarning>
+                    <form onSubmit={handleSubmit} suppressHydrationWarning>
                             <input
                                 type="email"
                                 value={email}
@@ -68,16 +68,16 @@ function page() {
                                     value={password}
                                     onChange={handlePasswordChange}
                                     required
-
+                                    suppressHydrationWarning
                                 />
                         {isPwdIconVisible && <MdPassword className='relative bottom-10 left-2 text-2xl align-center' />}
                         <button type="submit" className='text-white rounded-2xl w-80 h-14 bg-[#205BF1] button-signin'>Sign In</button>
                         </form>
                         
-                    </div>
+                    </section>
                         <p className='mt-5 text-center text-white opacity-50'>Don't have an account? Sign up</p>
                 </section>
-            </main >
+            </section >
         </>
     )
 }
