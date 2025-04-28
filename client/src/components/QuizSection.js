@@ -64,6 +64,7 @@ function QuizSection({startQuiz, endQuiz, quesArr=qArr }) {
     const [selected, setSelected] = useState(-1);
     const [question, setQuestion] = useState(-1);
     const [result, setResult] = useState(0);
+    const [startTime, setStartTime] = useState(null);
 
     
 
@@ -82,6 +83,7 @@ function QuizSection({startQuiz, endQuiz, quesArr=qArr }) {
       }
       const handleStartQuiz = () => {
         setQuestion(0);
+        setStartTime(Date.now()); 
         startQuiz();
       }
       
@@ -100,14 +102,20 @@ function QuizSection({startQuiz, endQuiz, quesArr=qArr }) {
         setQuestion(question+1)
         setSelected(-1);
         startQuiz();
-
       }
+
+      const totalTimeInSeconds = Math.floor((Date.now() - startTime) / 1000);
+      const minutes = Math.floor(totalTimeInSeconds / 60);
+      const seconds = totalTimeInSeconds % 60;
+    
 
       if(question === quesArr.length){
         endQuiz()
         return(
             <div style={{backgroundColor: 'rgba(3, 25, 72, 0.60)'}} className='w-[70vw] text-white p-5 h-[50vh] rounded-xl flex flex-col items-center'>
-              <div className='text-2xl font-bold'>Result of Your Quiz: {result} points<br/></div>
+              <div className='text-2xl font-bold'>Result of Your Quiz: {result} points<br/><br/>
+                Time Taken: {minutes < 10 ? '0' + minutes : minutes} : {seconds < 10 ? '0' + seconds : seconds}
+              </div>
             </div>
         )
       }
@@ -122,7 +130,7 @@ function QuizSection({startQuiz, endQuiz, quesArr=qArr }) {
             (
             <>
             <div className='text-xl mt-5'>{quesArr[question].question}</div>
-            
+
             <div className={`py-3 px-4 text-black text-lg absolute right-2 top-2 rounded-full
               ${quesArr[question].difficultyLevel === "Easy" ? 'bg-green-300' : quesArr[question].difficultyLevel === "Medium" ? 'bg-yellow-300' : 'bg-red-400'}`}>
               {quesArr[question].difficultyLevel}
