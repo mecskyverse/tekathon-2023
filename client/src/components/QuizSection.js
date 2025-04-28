@@ -3,14 +3,15 @@
 import React,{useState} from 'react'
 const qArr = [
   {
-    "question": " If cos 9x = sin x and 9x < 90°, then the value of tan 5x is:",
+    "question": "If cos 9x = sin x and 9x < 90°, then the value of tan 5x is:",
     "options": [
       "1/√3",
       "√3",
       "1",
       "0"
     ],
-    "correctIndex": '2'
+    "correctIndex": '2',
+    "difficultyLevel": "Medium"
   },
   {
     "question": "In ∆ ABC, right-angled at B, AB = 24 cm, BC = 7 cm. The value of tan C is:",
@@ -20,7 +21,8 @@ const qArr = [
       "20/7",
       "7/24"
     ],
-    "correctIndex": '1'
+    "correctIndex": '1',
+    "difficultyLevel": "Easy"
   },
   {
     "question": "If cos(x + y) = 0, then sin(x - y) can be reduced to:",
@@ -30,7 +32,8 @@ const qArr = [
       "sin x",
       "sin 2x"
     ],
-    "correctIndex": '1'
+    "correctIndex": '1',
+    "difficultyLevel": "Hard"
   },
   {
     "question": "The value of the expression [cosec (75° + θ) - sec (15° - θ) - tan (55° + θ) + cot (35° - θ)] is:",
@@ -40,7 +43,8 @@ const qArr = [
       "1",
       "3/2"
     ],
-    "correctIndex": '1'
+    "correctIndex": '1',
+    "difficultyLevel": "Medium"
   },
   {
     "question": "The value of (tan 1° tan 2° tan 3° … tan 89°) is:",
@@ -50,9 +54,11 @@ const qArr = [
       "2",
       "1/2"
     ],
-    "correctIndex": '1'
+    "correctIndex": '1',
+    "difficultyLevel": "Hard"
   }
 ]
+
 function QuizSection({startQuiz, endQuiz, quesArr=qArr }) {
 
     const [selected, setSelected] = useState(-1);
@@ -101,10 +107,7 @@ function QuizSection({startQuiz, endQuiz, quesArr=qArr }) {
         endQuiz()
         return(
             <div style={{backgroundColor: 'rgba(3, 25, 72, 0.60)'}} className='w-[70vw] text-white p-5 h-[50vh] rounded-xl flex flex-col items-center'>
-                    <div className='text-2xl font-bold'>Result of Your Quiz: {result} points<br/>
-            
-
-            </div>
+              <div className='text-2xl font-bold'>Result of Your Quiz: {result} points<br/></div>
             </div>
         )
       }
@@ -119,7 +122,12 @@ function QuizSection({startQuiz, endQuiz, quesArr=qArr }) {
             (
             <>
             <div className='text-xl mt-5'>{quesArr[question].question}</div>
-            <div className='py-3 px-2 bg-slate-100 text-black text-xl absolute right-2 rounded-lg'>{quesArr[question].difficultyLevel}</div>
+            
+            <div className={`py-3 px-4 text-black text-lg absolute right-2 top-2 rounded-full
+              ${quesArr[question].difficultyLevel === "Easy" ? 'bg-green-300' : quesArr[question].difficultyLevel === "Medium" ? 'bg-yellow-300' : 'bg-red-400'}`}>
+              {quesArr[question].difficultyLevel}
+            </div>
+
             <div className='flex flex-row gap-8 mt-20'>
             {
                 quesArr[question].options.map((option,index) => {
@@ -141,8 +149,8 @@ function QuizSection({startQuiz, endQuiz, quesArr=qArr }) {
 
             </div>
             <div className='flex justify-between flex-row mt-5 w-full p-5'>
-            <button onClick={handlePreviousClick} className='p-4 rounded-xl bg-[#0D8A7C]'>Previous</button> 
-            <button onClick={handleNextClick} className='p-4 rounded-xl bg-[#0D8A7C]'>Next</button>
+              <button onClick={handlePreviousClick} className='p-4 rounded-xl bg-[#0D8A7C]'>Previous</button> 
+              <button onClick={handleNextClick} className='p-4 rounded-xl bg-[#0D8A7C]'>Next</button>
             </div>
             </>
             )    
